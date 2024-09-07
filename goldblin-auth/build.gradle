@@ -2,12 +2,5 @@ bootJar.enabled = true
 jar.enabled = false
 
 dependencies {
-    // Spring Boot
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-
-    // MySQL
-    runtimeOnly 'com.mysql:mysql-connector-j'
-
     implementation project(':goldblin-common')
 }

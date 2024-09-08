@@ -20,10 +20,12 @@ public class AuthService {
 	private final PasswordManager passwordManager;
 
 	@Transactional
-	public Long signup(SignUpReq request) {
+	public void signup(SignUpReq request) {
 		validateUsernameUnique(request.username());
+
 		Member member = Member.signup(request.username(), request.password(), passwordManager);
-		return memberRepository.save(member).getId();
+
+		memberRepository.save(member);
 	}
 
 	private void validateUsernameUnique(String username) {

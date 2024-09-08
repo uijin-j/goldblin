@@ -1,15 +1,17 @@
 package goldblin.auth.presentation.api;
 
-import java.net.URI;
+import static goldblin.auth.constants.AuthMessages.*;
+import static org.springframework.http.HttpStatus.*;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import goldblin.auth.business.AuthService;
 import goldblin.auth.dto.request.SignUpReq;
+import goldblin.common.api.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -20,12 +22,10 @@ public class AuthApiController {
 	private final AuthService authService;
 
 	@PostMapping("/signup")
-	public ResponseEntity<Void> signup(@RequestBody @Valid SignUpReq request) {
-		Long resourceId = authService.signup(request);
-		URI location = URI.create("/api/member/" + resourceId);
-
-		return ResponseEntity.created(location)
-			.build();
+	@ResponseStatus(CREATED)
+	public ApiResponse<Void> signup(@RequestBody @Valid SignUpReq request) {
+		authService.signup(request);
+		return ApiResponse.of(CREATED, SIGNUP_SUCCESS, null);
 	}
 
 }

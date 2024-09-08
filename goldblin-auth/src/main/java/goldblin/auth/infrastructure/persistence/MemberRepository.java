@@ -1,4 +1,4 @@
-package goldblin.auth.persistence;
+package goldblin.auth.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

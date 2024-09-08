@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import goldblin.auth.domain.Member;
 import goldblin.auth.domain.service.PasswordManager;
 import goldblin.auth.dto.request.SignUpReq;
-import goldblin.auth.persistence.MemberRepository;
+import goldblin.auth.infrastructure.persistence.MemberRepository;
 import jakarta.persistence.EntityExistsException;
 import lombok.RequiredArgsConstructor;
 

@@ -8,3 +8,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
+
+jwt:
+  issuer: test
+  secret-key: 7Jik7KaIIOy3qOu9gCDqsIDspojslYQh
+  expired-after: 60 # 60분
+  refresh-expired-after: 10080 # 7일 (7*24*60)

@@ -40,9 +40,6 @@ public class Member {
 	@Column(name = "password", nullable = false)
 	private String encryptedPassword;
 
-	@Column(name = "refresh_token")
-	private String refreshToken;
-
 	public static Member signup(String username, String password, PasswordManager passwordManager) {
 		return Member.builder()
 			.authorityType(DEFAULT_AUTH_TYPE)

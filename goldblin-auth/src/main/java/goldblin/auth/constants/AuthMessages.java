@@ -19,4 +19,8 @@ public final class AuthMessages {
 	public static final String TOO_LONG_USERNAME = "아이디는 50자 이하여야 합니다.";
 	public static final String BLANK_PASSWORD = "비밀번호는 필수값입니다.";
 	public static final String DUPLICATE_USERNAME = "이미 사용중인 아이디입니다.";
+	public static final String INVALID_USERNAME = "해당 아이디를 가진 사용자가 존재하지 않습니다.";
+	public static final String INVALID_PASSWORD = "비밀번호가 올바르지 않습니다.";
+	public static final String EXPIRED_TOKEN = "만료된 토큰입니다.";
+	public static final String INVALID_TOKEN = "유효하지 않은 토큰입니다.";
 }

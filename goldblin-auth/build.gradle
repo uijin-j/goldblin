@@ -16,6 +16,11 @@ dependencies {
     // MariaDB
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
+    // Jjwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
     // Test
     testRuntimeOnly 'com.h2database:h2'
 

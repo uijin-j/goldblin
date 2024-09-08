@@ -13,6 +13,12 @@ spring:
     hibernate:
       ddl-auto: validate
 
+jwt:
+  issuer: ${JWT_ISSUER}
+  secret-key: ${JWT_SECRET_KEY}
+  expired-after: 60 # 60분
+  refresh-expired-after: 10080 # 7일 (7*24*60)
+
 springdoc:
   default-consumes-media-type: application/json
   default-produces-media-type: application/json

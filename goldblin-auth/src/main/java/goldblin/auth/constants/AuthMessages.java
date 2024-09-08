@@ -5,6 +5,10 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AuthMessages {
+	/**
+	 * 200 번대 성공 메시지
+	 */
+	public static final String SIGNUP_SUCCESS = "회원가입이 완료되었습니다.";
 
 	/**
 	 * 400 번대 에러 메시지

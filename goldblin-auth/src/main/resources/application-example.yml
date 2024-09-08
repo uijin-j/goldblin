@@ -9,3 +9,10 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: validate
+
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    tags-sorter: alpha
+    operations-sorter: method

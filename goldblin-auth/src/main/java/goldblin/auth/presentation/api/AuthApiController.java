@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import goldblin.auth.business.AuthService;
 import goldblin.auth.dto.request.SignUpReq;
+import goldblin.auth.presentation.docs.AuthApiControllerDoc;
 import goldblin.common.api.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-public class AuthApiController {
+public class AuthApiController implements AuthApiControllerDoc {
 	private final AuthService authService;
 
 	@PostMapping("/signup")

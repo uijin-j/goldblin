@@ -1,4 +1,4 @@
-package goldblin.common.api;
+package goldblin.order.presentation.api;
 
 import static org.springframework.http.HttpStatus.*;
 

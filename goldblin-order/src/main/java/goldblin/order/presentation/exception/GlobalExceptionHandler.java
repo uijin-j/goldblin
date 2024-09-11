@@ -1,4 +1,4 @@
-package goldblin.auth.presentation.exception;
+package goldblin.order.presentation.exception;
 
 import static org.springframework.http.HttpStatus.*;
 
@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import goldblin.auth.exception.TokenValidationFailException;
-import goldblin.auth.presentation.api.ApiResponse;
+import goldblin.order.presentation.api.ApiResponse;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -38,14 +37,6 @@ public class GlobalExceptionHandler {
 		log.debug(e.getMessage(), e.fillInStackTrace());
 
 		return ApiResponse.error(BAD_REQUEST, e.getMessage());
-	}
-
-	@ResponseStatus(UNAUTHORIZED)
-	@ExceptionHandler(TokenValidationFailException.class)
-	public ApiResponse<Void> handleTokenValidationFailException(TokenValidationFailException e) {
-		log.debug(e.getMessage(), e.fillInStackTrace());
-
-		return ApiResponse.error(UNAUTHORIZED, e.getMessage());
 	}
 
 	@ResponseStatus(NOT_FOUND)

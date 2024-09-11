@@ -10,4 +10,7 @@ dependencies {
 
     // MariaDB
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    // Test
+    testRuntimeOnly 'com.h2database:h2'
 }

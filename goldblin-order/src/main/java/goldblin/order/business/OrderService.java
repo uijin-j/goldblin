@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import goldblin.order.domain.Order;
 import goldblin.order.domain.Product;
 import goldblin.order.domain.service.OrderNumberGenerator;
-import goldblin.order.dto.req.OrderCreateReq;
+import goldblin.order.dto.req.OrderPlaceReq;
 import goldblin.order.infrastructure.persistence.OrderRepository;
 import goldblin.order.infrastructure.persistence.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -25,7 +25,7 @@ public class OrderService {
 	private final OrderNumberGenerator orderNumberGenerator;
 
 	@Transactional
-	public void order(OrderCreateReq request) {
+	public void place(OrderPlaceReq request) {
 		// TODO: gRPC 통신으로 유저 정보 받아오기
 		Long memberId = 1L;
 
@@ -54,7 +54,7 @@ public class OrderService {
 		orderRepository.save(order);
 	}
 
-	private Product getProduct(OrderCreateReq request) {
+	private Product getProduct(OrderPlaceReq request) {
 		return productRepository.findById(request.productId())
 			.orElseThrow(() -> new EntityNotFoundException(INVALID_PRODUCT));
 	}

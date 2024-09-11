@@ -8,6 +8,7 @@ import goldblin.order.domain.vo.Address;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -37,7 +38,7 @@ public class Order extends BaseTimeEntity {
 	@Column(name = "order_number", nullable = false, unique = true)
 	private String orderNumber;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name = "type", nullable = false, columnDefinition = "VARCHAR(15)")
 	private OrderType type;
 
@@ -48,7 +49,7 @@ public class Order extends BaseTimeEntity {
 	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name = "status", nullable = false, columnDefinition = "VARCHAR(15)")
 	private OrderStatus status;
 

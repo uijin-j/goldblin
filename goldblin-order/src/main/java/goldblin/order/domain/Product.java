@@ -1,5 +1,7 @@
 package goldblin.order.domain;
 
+import goldblin.order.domain.vo.Money;
+import goldblin.order.domain.vo.Quantity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +30,9 @@ public class Product extends BaseTimeEntity {
 	private String name;
 
 	@Column(name = "price", nullable = false)
-	private int price;
+	private Money pricePerGram;
+
+	public Money calculatePrice(Quantity quantity) {
+		return pricePerGram.multiply(quantity);
+	}
 }

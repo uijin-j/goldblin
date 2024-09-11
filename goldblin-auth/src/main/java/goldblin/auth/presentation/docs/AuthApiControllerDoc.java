@@ -3,7 +3,7 @@ package goldblin.auth.presentation.docs;
 import goldblin.auth.dto.request.LoginReq;
 import goldblin.auth.dto.request.SignUpReq;
 import goldblin.auth.dto.response.LoginRes;
-import goldblin.common.api.ApiResponse;
+import goldblin.auth.presentation.api.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 

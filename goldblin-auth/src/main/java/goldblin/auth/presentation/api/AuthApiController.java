@@ -14,7 +14,6 @@ import goldblin.auth.dto.request.LoginReq;
 import goldblin.auth.dto.request.SignUpReq;
 import goldblin.auth.dto.response.LoginRes;
 import goldblin.auth.presentation.docs.AuthApiControllerDoc;
-import goldblin.common.api.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 

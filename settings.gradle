@@ -2,4 +2,3 @@ rootProject.name = 'goldblin'
 
 include 'goldblin-auth'
 include 'goldblin-order'
-include 'goldblin-common'

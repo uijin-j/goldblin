@@ -23,6 +23,4 @@ dependencies {
 
     // Test
     testRuntimeOnly 'com.h2database:h2'
-
-    implementation project(':goldblin-common')
 }

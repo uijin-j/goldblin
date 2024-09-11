@@ -1,10 +1,13 @@
 package goldblin.order.domain;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import goldblin.order.domain.enums.OrderStatus;
 import goldblin.order.domain.enums.OrderType;
 import goldblin.order.domain.vo.Address;
+import goldblin.order.domain.vo.Money;
+import goldblin.order.domain.vo.Quantity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -61,5 +64,23 @@ public class Order extends BaseTimeEntity {
 
 	@Embedded
 	private Address address;
+
+	@Column(name = "orderedAt", nullable = false, columnDefinition = "DATE")
+	private LocalDate orderedAt;
+
+	public static Order create(String orderNumber, String type, Long memberId, Product product, BigDecimal quantity,
+		String city, String street, String zipcode, LocalDate orderedAt) {
+		return Order.builder()
+			.orderNumber(orderNumber)
+			.type(OrderType.of(type))
+			.memberId(memberId)
+			.product(product)
+			.status(OrderStatus.COMPLETED)
+			.quantity(Quantity.of(quantity))
+			.price(product.calculatePrice(Quantity.of(quantity)))
+			.address(Address.of(city, street, zipcode))
+			.orderedAt(orderedAt)
+			.build();
+	}
 
 }

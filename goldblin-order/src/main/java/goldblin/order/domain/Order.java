@@ -53,8 +53,11 @@ public class Order extends BaseTimeEntity {
 	@Column(name = "status", nullable = false, columnDefinition = "VARCHAR(15)")
 	private OrderStatus status;
 
-	@Column(name = "price", nullable = false, columnDefinition = "DECIMAL(10, 2)")
-	private BigDecimal price;
+	@Embedded
+	private Quantity quantity;
+
+	@Embedded
+	private Money price;
 
 	@Embedded
 	private Address address;
